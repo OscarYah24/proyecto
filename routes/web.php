@@ -22,3 +22,5 @@ Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])-
 Route::get('/welcome', function () {
     return view('welcome');
 });
+
+Route::get('/article', [ArticleController::class, 'index'])->name('home');
