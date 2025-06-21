@@ -397,7 +397,9 @@
                     <small class="ms-1">by envato</small>
                 </div>
                 <div class="col-lg-4 col-md-5 text-end">
-                    <a href="#" class="btn btn-light btn-sm fw-bold mt-2 mt-md-0">Download Now</a>
+                    <a href="{{ route('login') }}" class="btn btn-light btn-sm fw-bold mt-2 mt-md-0">
+    <i class="fas fa-sign-in-alt me-1"></i>Iniciar Sesión
+</a>
                 </div>
             </div>
         </div>

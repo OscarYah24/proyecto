@@ -4,12 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Article extends Model
+class Category extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
 
     /**
      * Los atributos que se pueden asignar masivamente.
@@ -17,10 +16,8 @@ class Article extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'title',
-        'content',
-        'author',
-        'category_id',
+        'name',
+        'descripcion',
     ];
 
     /**
@@ -31,14 +28,13 @@ class Article extends Model
     protected $casts = [
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
-        'deleted_at' => 'datetime',
     ];
 
     /**
-     * Relación: Un artículo pertenece a una categoría
+     * Relación: Una categoría puede tener múltiples artículos
      */
-    public function category(): BelongsTo
+    public function articles(): HasMany
     {
-        return $this->belongsTo(Category::class);
+        return $this->hasMany(Article::class);
     }
 }

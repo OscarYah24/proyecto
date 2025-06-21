@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MockupsController;
+use App\Http\Controllers\ArticleController;
 
 // Ruta principal del proyecto
 Route::get('/', [MockupsController::class, 'index'])->name('mockups.home');
@@ -17,10 +18,14 @@ Route::get('/search', [MockupsController::class, 'search'])->name('search');
 
 Auth::routes();
 
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware(['auth'])->group(function () {
+    // Dashboard
+    Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    
+    // CRUD de artículos
+    Route::resource('articles', ArticleController::class);
+});
 
 Route::get('/welcome', function () {
     return view('welcome');
 });
-
-Route::get('/article', [ArticleController::class, 'index'])->name('home');
