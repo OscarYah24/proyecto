@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MockupsController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CategoryController; 
 
 // Ruta principal del proyecto
 Route::get('/', [MockupsController::class, 'index'])->name('mockups.home');
@@ -24,6 +25,9 @@ Route::middleware(['auth'])->group(function () {
     
     // CRUD de artículos
     Route::resource('articles', ArticleController::class);
+    
+    // CRUD de categorías 
+    Route::resource('categories', CategoryController::class);
 });
 
 Route::get('/welcome', function () {

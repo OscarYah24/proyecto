@@ -28,6 +28,19 @@
                             </div>
                         </div>
                         
+                    <div class="col-md-4 mb-4">
+                        <div class="card border-success">
+                            <div class="card-body">
+                                <i class="fas fa-folder fa-3x text-success mb-3"></i>
+                                <h5 class="card-title">Gestión de Categorías</h5>
+                                <p class="card-text">Organiza y administra las categorías de contenido</p>
+                                <a href="{{ route('categories.index') }}" class="btn btn-success">
+                                    Ir a Categorías
+                                </a>
+                           </div>
+                        </div>
+                     </div>
+
                         <div class="col-md-6 mb-4">
                             <div class="card border-info">
                                 <div class="card-body">

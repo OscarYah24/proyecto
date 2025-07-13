@@ -44,6 +44,11 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('categories.index') }}">
+                                <i class="fas fa-folder me-1"></i>Categorías
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <i class="fas fa-briefcase me-1"></i>Bolsa de Empleo
                             </a>
