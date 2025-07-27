@@ -30,6 +30,11 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('categories', CategoryController::class);
 });
 
+    Route::get('/api/posts', [App\Http\Controllers\PostController::class, 'index'])->name('posts.index');
+    Route::get('/api/posts/{id}', [App\Http\Controllers\PostController::class, 'show'])->name('posts.show');
+    Route::post('/api/posts', [App\Http\Controllers\PostController::class, 'store'])->name('posts.store');
+
+
 Route::get('/welcome', function () {
     return view('welcome');
 });
